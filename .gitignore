@@ -1,0 +1,18 @@
+# Large dataset (provided in the hackathon bundle)
+candidates.jsonl
+candidates.jsonl.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated artifacts that exceed GitHub size limits — regenerate with precompute.py.
+# Small artifacts (jd_requirements.json, *.parquet, *.npy) MAY be committed if desired.
+artifacts/candidate_embeddings.faiss
+artifacts/embedding_model/
+artifacts/_sample_emb.npz
+
+# Local outputs
+submission.csv

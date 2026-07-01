@@ -1,0 +1,72 @@
+# Redrob Hackathon — Submission Metadata
+# Mirrors the portal metadata. See submission_metadata_template.yaml for field docs.
+
+team_name: "Orbyt"
+
+primary_contact:
+  name: "Tanishka"
+  email: "tanishka.ppal@gmail.com"
+  phone: "+91-XXXXXXXXXX"          # TODO: fill before submitting
+
+team_members:
+  - name: "Anuj"
+    email: "anujnalawade644@gmail.com"
+    role: "Team Lead / ML Engineer"
+
+# ----------------------------------------------------------------------------
+# Code and reproducibility
+# ----------------------------------------------------------------------------
+github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"   # TODO: set real repo
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"  # TODO: deploy app.py
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+# ----------------------------------------------------------------------------
+# Compute environment
+# ----------------------------------------------------------------------------
+compute:
+  platform: "Local Windows workstation"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.10.11"
+  os: "Windows 10 Pro"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true          # embeddings + FAISS + features built offline by precompute.py
+  pre_computation_time_minutes: 15        # TODO: update with measured value
+
+# ----------------------------------------------------------------------------
+# AI tools declaration (transparency only — not penalized)
+# ----------------------------------------------------------------------------
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude (Claude Code) for architecture design, code authoring, and review. No candidate
+  data was sent to any hosted LLM during the ranking step. The optional precompute enrichment
+  module (src/enrich_llm.py) can call Claude offline, but it is disabled by default and the
+  submitted ranking does not depend on it.
+
+# ----------------------------------------------------------------------------
+# Approach summary
+# ----------------------------------------------------------------------------
+methodology_summary: |
+  Two-phase recruiter-intelligence ranker. Precompute (offline): structured JD spec, deterministic
+  features (tenure/job-hopping, product-vs-consulting, title/domain signals, behavioral
+  composites), a capability graph that infers latent capabilities (retrieval, ranking,
+  recommendation, embeddings, evaluation, production ML) from career evidence even when keywords
+  are absent, CPU sentence-transformer embeddings + FAISS, and rule-based honeypot detection.
+  Ranking (<5 min, CPU, no network): FAISS shortlist (100k->1500) unioned with strong capability
+  matches, then a Recruiter Intelligence Score blending capability fit, career evidence,
+  availability, recruiter demand, and experience fit, minus soft penalties (job-hopping,
+  consulting-only, research-only, CV/speech-only, title mismatch, location/notice). Honeypots are
+  the only hard filter. Reasoning is generated from profile facts with no LLM and no hallucination.
+
+# ----------------------------------------------------------------------------
+# Declarations
+# ----------------------------------------------------------------------------
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

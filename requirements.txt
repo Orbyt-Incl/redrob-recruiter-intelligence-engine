@@ -1,0 +1,16 @@
+# Core ranking pipeline (CPU-only, no network at rank time)
+numpy==2.2.6
+pandas==2.3.3
+pyarrow==24.0.0
+scikit-learn==1.7.2
+faiss-cpu==1.14.3
+sentence-transformers==5.5.1
+torch==2.12.0+cpu
+pyyaml==6.0.3
+
+# Demo (sandbox deliverable)
+gradio==6.18.0
+
+# OPTIONAL — only for the precompute LLM enrichment layer (src/enrich_llm.py).
+# Not required to reproduce the submission. Uncomment to use.
+# anthropic>=0.40.0
