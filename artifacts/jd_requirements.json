@@ -1,0 +1,67 @@
+{
+  "title": "Senior AI Engineer - Founding Team",
+  "company": "Redrob AI",
+  "query_text": "Senior AI engineer who has built and deployed embeddings-based retrieval, semantic search, ranking, and recommendation systems to real users in production at a product company. Strong Python. Experience with vector databases and hybrid search (FAISS, Pinecone, Elasticsearch, OpenSearch). Designs evaluation frameworks for ranking using NDCG, MRR, MAP and online A/B testing. Has shipped end-to-end search, ranking, or recommendation systems at meaningful scale. 6 to 8 years of applied machine-learning experience. Tilts toward shipping production systems rather than pure research.",
+  "experience": {
+    "accept_low": 5.0,
+    "accept_high": 9.0,
+    "ideal_low": 6.0,
+    "ideal_high": 8.0
+  },
+  "capability_importance": {
+    "retrieval": 1.0,
+    "ranking": 1.0,
+    "embeddings": 0.9,
+    "search_ir": 0.8,
+    "recommendation": 0.8,
+    "evaluation": 0.9,
+    "production_ml": 0.85,
+    "nlp": 0.6,
+    "llm": 0.5
+  },
+  "must_haves": [
+    "embeddings-based retrieval in production",
+    "vector database / hybrid search infrastructure",
+    "strong Python",
+    "ranking evaluation frameworks (NDCG, MRR, MAP, A/B testing)"
+  ],
+  "nice_to_haves": [
+    "LLM fine-tuning (LoRA, QLoRA, PEFT)",
+    "learning-to-rank models",
+    "HR-tech / recruiting / marketplace products",
+    "distributed systems / large-scale inference",
+    "open-source contributions"
+  ],
+  "anti_signals": {
+    "title_chaser_job_hopping": true,
+    "framework_only_langchain": true,
+    "consulting_only_career": true,
+    "cv_speech_robotics_only": true,
+    "research_only_no_production": true,
+    "closed_source_only": true
+  },
+  "location": {
+    "target_cities": [
+      "pune",
+      "noida",
+      "hyderabad",
+      "mumbai",
+      "delhi",
+      "new delhi",
+      "gurgaon",
+      "gurugram",
+      "ncr",
+      "ghaziabad",
+      "faridabad",
+      "navi mumbai",
+      "thane"
+    ],
+    "target_country": "india",
+    "relocation_acceptable": true
+  },
+  "notice_period": {
+    "ideal_max_days": 30,
+    "buyout_max_days": 30
+  },
+  "behavioral_note": "Down-weight perfect-on-paper candidates who are inactive or unresponsive; availability and engagement matter for hireability."
+}
