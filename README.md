@@ -54,14 +54,14 @@ and is **git-ignored**; drop it in the repo root before running.
 python precompute.py --candidates ./candidates.jsonl
 
 # Phase 2 — produce the submission (CPU only, no network, < 5 min)
-python rank.py --candidates ./candidates.jsonl --out ./submission.csv --validate
+python rank.py --candidates ./candidates.jsonl --out ./orbyt.csv --validate
 ```
 
 **Stage-3 single command.** The committed `artifacts/` are produced by `precompute.py`, so the
 ranking step reproduces the CSV on its own — no re-precompute required:
 
 ```bash
-python rank.py --candidates ./candidates.jsonl --out ./submission.csv
+python rank.py --candidates ./candidates.jsonl --out ./orbyt.csv
 ```
 
 `rank.py` reads only the precomputed artifacts (keyed by `candidate_id`) plus the local FAISS
@@ -71,7 +71,7 @@ accepted for interface parity but the ranking step consumes the artifacts, not t
 ## Evaluate (proxy — no public ground truth)
 
 ```bash
-python -m eval.proxy_eval --submission submission.csv
+python -m eval.proxy_eval --submission orbyt.csv
 ```
 
 Reports proxy NDCG@10/50, MAP, P@10 and runs **trap regression checks** (0 honeypots in top-100,
