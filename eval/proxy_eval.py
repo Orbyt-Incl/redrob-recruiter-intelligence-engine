@@ -87,7 +87,11 @@ def main() -> None:
     cap = pd.read_parquet(config.CAPABILITY_PARQUET)
     rel = proxy_relevance(feat, cap)
     sub = pd.read_csv(args.submission).sort_values("rank")
-    sub = sub.merge(rel, on="candidate_id", how="left").merge(feat, on="candidate_id", how="left")
+    sub = (
+        sub.merge(rel, on="candidate_id", how="left")
+        .merge(feat, on="candidate_id", how="left")
+        .merge(cap, on="candidate_id", how="left")  # brings in capability_fit for the trap checks
+    )
 
     all_rels = rel["proxy_tier"].to_numpy().astype(float)
     ranked_rels = sub["proxy_tier"].to_numpy().astype(float)

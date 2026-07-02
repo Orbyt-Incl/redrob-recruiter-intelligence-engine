@@ -1,1 +1,1 @@
-"""Evaluation harness (proxy metrics + trap regression checks)."""
+"""Redrob ranking pipeline — feature/capability extraction, scoring, and reasoning."""

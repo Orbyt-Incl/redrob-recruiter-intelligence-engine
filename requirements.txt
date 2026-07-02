@@ -1,4 +1,10 @@
 # Core ranking pipeline (CPU-only, no network at rank time)
+#
+# The CPU build of torch is published on the PyTorch index, not PyPI, so we add it as an
+# extra index. This lets `pip install -r requirements.txt` resolve torch==2.12.0+cpu on a
+# fresh clone (a plain `torch==2.12.0+cpu` pin fails against PyPI alone).
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 numpy==2.2.6
 pandas==2.3.3
 pyarrow==24.0.0
