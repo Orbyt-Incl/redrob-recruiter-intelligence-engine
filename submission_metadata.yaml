@@ -9,11 +9,11 @@ primary_contact:
   phone: "+91-7738699914"
 
 team_members:
-  - name: "Anuj"
-    email: "anujnalawade644@gmail.com"
-    role: "Team Lead / ML Engineer"
   - name: "Tanishka"
     email: "tanishka.ppal@gmail.com"
+    role: "Team Lead"
+  - name: "Anuj"
+    email: "anujnalawade644@gmail.com"
     role: "ML Engineer"
 
 # ----------------------------------------------------------------------------
@@ -21,7 +21,7 @@ team_members:
 # ----------------------------------------------------------------------------
 github_repo: "https://github.com/Orbyt-Incl/redrob-recruiter-intelligence-engine"
 sandbox_link: "https://huggingface.co/spaces/anuj459/redrob-recruiter-ranker"
-reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./orbyt.csv"
 
 # ----------------------------------------------------------------------------
 # Compute environment
